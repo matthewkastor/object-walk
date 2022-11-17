@@ -1,13 +1,13 @@
 {
   "name": "object-walk",
-  "version": "0.1.1",
+  "version": "2022.11.16",
   "description": "Walks through an object executing user defined functions at every node on the way down and back up.",
   "main": "./src/object-walk.js",
   "directories": {
     "lib": "src"
   },
   "devDependencies": {
-    "browserify": ">=2.29.1",
+    "browserify": ">=17.0.0",
     "jasmine-node": ">=1.11.0"
   },
   "scripts": {
@@ -30,8 +30,8 @@
   },
   "licenses": [
     {
-        "type" : "gpl-3.0",
-        "url" : "http://www.gnu.org/licenses/gpl-3.0-standalone.html"
+      "type": "gpl-3.0",
+      "url": "http://www.gnu.org/licenses/gpl-3.0-standalone.html"
     }
   ],
   "dependencies": {
