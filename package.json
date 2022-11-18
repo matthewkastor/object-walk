@@ -7,12 +7,19 @@
     "lib": "src"
   },
   "devDependencies": {
+    "atropa-jsformatter": "git+https://github.com/matthewkastor/atropa-jsformatter.git#gh-pages",
+    "atropa-jslint": "git+https://github.com/matthewkastor/atropa-jslint.git#master",
     "browserify": ">=17.0.0",
-    "jasmine-node": ">=1.11.0"
+    "jasmine-node": ">=1.11.0",
+    "jsdoc-toolkit": "git+https://github.com/matthewkastor/node-jsdoc-toolkit.git#fix-tests"
   },
   "scripts": {
     "test": "jasmine-node specs/",
-    "buildBrowserModule": "node dev/browserify.js"
+    "buildBrowserModule": "node dev/browserify.js",
+    "srcFormat": "atropa-jsformatter ./src/object-walk.js ./src/object-walk.js",
+    "lint": "atropa-jslint ./src/object-walk.js",
+    "buildDocs": "jsdoc-toolkit -v -d=./docs/jsdoc/ -r -s src/",
+    "buildVsdocs": "jsdoc-toolkit -v -d=./docs/vsdoc/ -t=./node_modules/jsdoc-toolkit/templates/vsdoc/ -r -s src/"
   },
   "homepage": "https://github.com/matthewkastor/object-walk/",
   "bugs": "https://github.com/matthewkastor/object-walk/issues",
@@ -35,6 +42,6 @@
     }
   ],
   "dependencies": {
-    "object-foreach": ">=0.1.1"
+    "object-foreach": "git+https://github.com/matthewkastor/object-foreach.git#master"
   }
 }

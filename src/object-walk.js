@@ -1,3 +1,16 @@
+/*jslint
+    indent: 4,
+    maxerr: 50,
+    white: true,
+    node: true,
+    browser: true,
+    devel: true,
+    plusplus: true,
+    regexp: true
+*/
+/*global atropa */
+// end header
+
 /**
  * Walks through an object executing user defined functions at every node on the 
  *  way down and back up. Functions will be given three arguments: the value
@@ -13,8 +26,8 @@
  */
 function objectWalk(obj, descentionFn, ascentionFn) {
     "use strict";
-    descentionFn = descentionFn || function () {return null;}
-    ascentionFn = ascentionFn || function () {return null;}
+    descentionFn = (descentionFn || function () {return null;});
+    ascentionFn = (ascentionFn || function () {return null;});
     var objectForeach = require('object-foreach');
     function walk(obj) {
         objectForeach(obj, function (val, prop, aObj) {
@@ -27,5 +40,5 @@ function objectWalk(obj, descentionFn, ascentionFn) {
         return obj;
     }
     return walk(obj);
-};
+}
 module.exports = objectWalk;
